@@ -8,6 +8,10 @@ function App() {
     const [achternaamValue, setAchternaamValue] = React.useState('');
     const [leeftijdValue, setLeeftijdValue] = React.useState('');
     const [postcodeValue, setPostcodeValue] = React.useState('');
+    const [iedere_weekValue, setIedere_weekValue] = React.useState('');
+    const [om_de_weekValue, setOm_de_weekValue] = React.useState('');
+    const [iedere_maandValue, setIedere_maandValue] = React.useState('');
+    const [andersValue, setAndersValue] = React.useState('');
 
   return (
     <>
@@ -22,8 +26,8 @@ function App() {
               -
           </button>
       </fieldset>
-      <div>
-        <form>
+      <form>
+        <div>
             <label htmlFor="Voornaam"> Voornaam: </label>
             <input
                 type="text"
@@ -52,15 +56,50 @@ function App() {
                 onChange={(e) => setPostcodeValue(e.target.value)}
             />
             <legend> Bezorgingsfrequentie </legend>
+            <input
+                type="radio"
+                id="iedere_week"
+                name="frequentie"
+                value={iedere_weekValue}
+                onChange={(e) => setIedere_weekValue(e.target.value)}
+            />
+            <label htmlFor="iedere_week">
+                Iedere week
+            </label>
             <br/>
-            <input type="radio" id="iedere-week" name="frequentie" value="iedere-week"/>
-            <label htmlFor="iedere-week">Iedere week</label><br/>
-            <input type="radio" id="om-de-week" name="frequentie" value="om-de-week"/>
-            <label htmlFor="om-de-week">Om de week</label><br/>
-            <input type="radio" id="iedere-maand" name="frequentie" value="iedere-maand"/>
-            <label htmlFor="iedere-maand">Iedere maand</label><br/>
-            <input type="radio" id="anders" name="frequentie" value="anders"/>
-            <label htmlFor="anders">Anders</label>
+            <input
+                type="radio"
+                id="om_de_week"
+                name="frequentie"
+                value={om_de_weekValue}
+                onChange={(e) => setOm_de_weekValue(e.target.value)}
+            />
+            <label htmlFor="om_de_week">
+                Om de week
+            </label>
+            <br/>
+            <input
+                type="radio"
+                id="iedere_maand"
+                name="frequentie"
+                value={iedere_maandValue}
+                onChange={(e) => setIedere_maandValue(e.target.value)}
+            />
+            <label htmlFor="iedere_maand">
+                Iedere maand
+            </label>
+            <br/>
+            <input
+                type="radio"
+                id="anders"
+                name="frequentie"
+                value={andersValue}
+                onChange={(e) => setAndersValue(e.target.value)}
+            />
+            <label htmlFor="anders">
+                Anders
+            </label>
+            <br/>
             <label htmlFor="opmerkingen"> Opmerkingen: <br/> </label>
             <textarea name="opmerkingen" id="opmerkingen">
             </textarea>
@@ -68,11 +107,12 @@ function App() {
             <input type="checkbox"/>
             <p> Ik ga akkoord met de voorwaarden </p>
             <button type="submit"> Verzend </button>
-        </form>
-      </div>
+        </div>
+      </form>
     </>
   );
 }
+
 
 
 
